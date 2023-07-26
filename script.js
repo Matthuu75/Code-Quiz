@@ -3,3 +3,8 @@ FormEl. on("submit", function (e) {
     e.preventDefault()
     console.log('Form Submitted')
 })
+
+//preventDefult = prevents submitting to the server
+
+// jquery - 'boxy'
+
