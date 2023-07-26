@@ -1,0 +1,23 @@
+* {
+    margin: 100;
+    padding: 10;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    border: 6 solid black;
+}
+
+body {
+    background: red;
+}
+
+.app {
+    background: blue;
+    max-width: 80%;
+    margin: 100px auto 0;
+    border-radius: 15px;
+}
+
+.title {
+    box-sizing: flex;
+    
+}
