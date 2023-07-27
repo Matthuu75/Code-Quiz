@@ -11,6 +11,7 @@ body {
 }
 
 .timer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     flex-direction: row;
     background: yellow;
     margin: 0;

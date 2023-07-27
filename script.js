@@ -4,69 +4,20 @@
 //     console.log('Form Submitted')
 // })
 
-var timerEl = document.getElementById('countdownTimer')
 
+var timerEl = document.getElementById('timer')
+var startQuiz = document.getElementById('#startQuiz')
 
 function countdown() {
+    // onclick EVENT
     var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 1)
-            timeInterval.textContent = 'Time' + timeLeft;
-        timeLeft--;
-        if (timerEl.textContent = '') {
+            timeInterval.textContent = timeLeft + ' seconds remaining';
+            timeLeft--;
+        if (timerEl.textContent = 'Timer: ') {
             clearInterval(timeInterval);
-            displayMessage();
+            displayMessage("Time's Up!")
         }
-    }, 5000)
+    }, 1000)
 }
-
-// function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
-
-//     function showQuestions(questions, quizContainer) {
-//         var output = [];
-//         var answers;
-//         for (var i=0; i<questions.length; i++){
-//             answers = []
-//             for(letter in questions[i].answers){
-//                 answers.push(
-//                     '<label>'
-//                     + '<input type="radio" name="question'+i+'" value"'+letter+'">'
-//                     + letter + ':'
-//                     + questions[i].answers[letter]
-//                     +'<label>'
-//                 );
-//             }
-//             output.push(
-//                 '<div class="question">'
-//             )
-//         }
-//     }
-
-//     function showResults(questions, quizContainer, resultsContainer) {
-
-//     }
-
-//     showQuestions(questions, quizContainer);
-
-//     submitButton.onclick = function () {
-//         showResults(questions, quizContainer, resultsContainer)
-//     }
-// }
-
-// var theQuestions = [
-//     {
-//         question: "What is my favorite color?",
-//         answers: {
-//             a: 'red',
-//             b: 'blue',
-//             c: 'yellow',
-//             d: 'none of the above',
-//         },
-//         correctAnswer: 'a'
-//     }
-// ]
-
-//preventDefult = prevents submitting to the server
-
-// jquery - 'boxy'
-
