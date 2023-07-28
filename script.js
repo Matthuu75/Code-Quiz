@@ -7,17 +7,24 @@
 
 var timerEl = document.getElementById('timer')
 var startQuiz = document.getElementById('#startQuiz')
+var remainingTime = document.getElementById('remainingTime')
+const button = document.querySelector("#button")
+
+addEventListener("click", (e) => {
+    console.log("start timer")
+    countdown()
+});
 
 function countdown() {
     // onclick EVENT
     var timeLeft = 60;
     var timeInterval = setInterval(function () {
-        if (timeLeft > 1)
-            timeInterval.textContent = timeLeft + ' seconds remaining';
+        if (timeLeft > 1) {
+            remainingTime.textContent = 'Time: ' + timeLeft;
             timeLeft--;
-        if (timerEl.textContent = 'Timer: ') {
+        } else {
             clearInterval(timeInterval);
-            displayMessage("Time's Up!")
+            remainingTime.textContent = "Time's Up"
         }
-    }, 1000)
-}
+    }, 1000);
+} 
