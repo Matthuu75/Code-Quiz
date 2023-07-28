@@ -4,6 +4,63 @@
 //     console.log('Form Submitted')
 // })
 
+const questions = [
+    {
+        //question index 0
+        question: "What color is the sun?",
+        answers: [
+            { text: "Yellow", correct: true },
+            { text: "Blue", correct: false },
+            { text: "Red", correct: false }
+        ]
+    },
+    {
+        //question index 1
+        question: "What animal is taller than a hippo?",
+        answers: [
+            { text: "Mouse", correct: false },
+            { text: "Giraffe", correct: true },
+            { text: "Dog", correct: false }
+        ]
+    },
+    {
+        //question index 2
+        question: "What color is lime?",
+        answers: [
+            { text: "Yellow", correct: false },
+            { text: "Blue", correct: false },
+            { text: "Green", correct: true }
+        ]
+    }
+];
+
+const questionEl = document.getElementById("question");
+const answerBtn = document.getElementById("answer-btn");
+const nextBtn = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextBtn.innerHTML = "Next";
+    showQuestion();
+}
+
+function showQuestion() {
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestion = 1;
+    questionEl.innerHTML = questions + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerBtn.appendChild(button);
+    })
+}
+startQuiz();
 
 var timerEl = document.getElementById('timer')
 var startQuiz = document.getElementById('#startQuiz')
@@ -28,4 +85,5 @@ function countdown() {
             remainingTime.textContent = "Time's Up"
         }
     }, 1000);
-} 
+}
+

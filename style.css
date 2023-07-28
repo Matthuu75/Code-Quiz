@@ -9,7 +9,7 @@
 body {
     background: red;
 }
-.app{
+.startQuestion{
     background: white;
     width: 90%;
     max-width: 500px;
@@ -27,4 +27,66 @@ body {
     width: 80px;
     height: 30px;
 
+}
+
+.question1 {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+.question2 {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+.question3 {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.quizQuestions h3 {
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.btn {
+    background: green;
+    color: purple;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: purple;
+    color: green;
+}
+#next-btn {
+    background-color: aqua;
+    color: orange;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
 }
