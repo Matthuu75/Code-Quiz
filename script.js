@@ -10,6 +10,7 @@ var startQuiz = document.getElementById('#startQuiz')
 var remainingTime = document.getElementById('remainingTime')
 const button = document.querySelector("#button")
 
+//need to figure out how to get this timer to start on the start quiz button
 addEventListener("click", (e) => {
     console.log("start timer")
     countdown()
