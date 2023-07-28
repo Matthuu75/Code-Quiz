@@ -29,23 +29,7 @@ body {
 
 }
 
-.question1 {
-    background: white;
-    width: 90%;
-    max-width: 500px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-}
-.question2 {
-    background: white;
-    width: 90%;
-    max-width: 500px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-}
-.question3 {
+.quiz {
     background: white;
     width: 90%;
     max-width: 500px;
@@ -63,8 +47,8 @@ body {
 }
 
 .btn {
-    background: green;
-    color: purple;
+    background: white;
+    color: black;
     font-weight: 500;
     width: 100%;
     border: 1px solid black;
@@ -75,8 +59,8 @@ body {
     cursor: pointer;
 }
 .btn:hover {
-    background-color: purple;
-    color: green;
+    background-color: black;
+    color: white;
 }
 #next-btn {
     background-color: aqua;
@@ -89,4 +73,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
     display: none;
+}
+
+.correct {
+    background: green;
+}
+.incorrect {
+    background: red;
 }
