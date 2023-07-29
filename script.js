@@ -28,9 +28,11 @@ const questions = [
     }
 ];
 
+
 const questionEl = document.getElementById("question");
 const answerBtns = document.getElementById("answer-btns");
 const nextBtn = document.getElementById("next-btn");
+const scoreBox = document.getElementById("score")
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -39,14 +41,18 @@ let score = 0;
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    scoreBox.textContent = "Score: " + score
     nextBtn.innerHTML = "Next";
     showQuestion();
 }
 
 function showQuestion() {
+    //taking the question using indecies 0, 1, 2
+    answerBtns.textContent = ""
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNum = currentQuestion + 1;
+    let questionNum = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNum + ". " + currentQuestion.question;
+    // console.log(questionNum)
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -60,6 +66,13 @@ function showQuestion() {
     })
 }
 
+function nextQuestion() {
+    currentQuestionIndex++
+    showQuestion()
+}
+nextBtn.addEventListener("click", nextQuestion)
+
+
 function resetQuiz() {
     nextBtn.style.display = "none";
     while (answerBtns.firstChild) {
@@ -68,6 +81,7 @@ function resetQuiz() {
 }
 function selectAnswer(e) {
     const selectedBtn = e.target;
+    //correct answers are in green, incorrect in red
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
@@ -85,28 +99,32 @@ function selectAnswer(e) {
 
 startQuiz();
 
-// var timerEl = document.getElementById('timer')
-// var startQuiz = document.getElementById('#startQuiz')
-// var remainingTime = document.getElementById('remainingTime')
-// const button = document.querySelector("#button")
+var timerEl = document.getElementById('timer')
+var startQuiz = document.getElementById('#startQuiz')
+var remainingTime = document.getElementById('remainingTime')
+const button = document.querySelector("#button")
+var startBtn = document.getElementById("start")
 
-// //need to figure out how to get this timer to start on the start quiz button
-// addEventListener("click", (e) => {
-//     console.log("start timer")
-//     countdown()
-// });
+//need to figure out how to get this timer to start on the start quiz button
+startBtn.addEventListener("click", (e) => {
+    console.log("start timer")
+    document.getElementById("startQuestion").style.display = "none";
+    document.getElementById("quizQuestions").style.display = "block";
+    countdown()
+});
 
-// function countdown() {
-//     // onclick EVENT
-//     var timeLeft = 60;
-//     var timeInterval = setInterval(function () {
-//         if (timeLeft > 1) {
-//             remainingTime.textContent = 'Time: ' + timeLeft;
-//             timeLeft--;
-//         } else {
-//             clearInterval(timeInterval);
-//             remainingTime.textContent = "Time's Up"
-//         }
-//     }, 1000);
-// }
+function countdown() {
+    // onclick EVENT?
+    var timeLeft = 60;
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            remainingTime.textContent = 'Time: ' + timeLeft;
+            timeLeft--;
+        } else {
+            clearInterval(timeInterval);
+            remainingTime.textContent = "Time's Up"
+        }
+    }, 1000);
+}
+
 

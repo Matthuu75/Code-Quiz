@@ -38,6 +38,10 @@ body {
     padding: 30px;
 }
 
+.quizQuestions {
+    display: none;
+}
+
 .quizQuestions h3 {
     font-size: 25px;
     color: black;
