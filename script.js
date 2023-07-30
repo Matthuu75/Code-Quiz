@@ -25,7 +25,14 @@ const questions = [
             { text: "Blue", correct: false },
             { text: "Green", correct: true },
         ]
-    }
+    },
+    {
+        question: "Start over?",
+        answers: [
+            { text: "Yes", correct: true },
+            { text: "No", correct: false },
+        ]
+    },
 ];
 
 const questionEl = document.getElementById("question");
@@ -84,7 +91,7 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
-        score ++;
+        score++;
         console.log("Correct!");
     } else {
         selectedBtn.classList.add("incorrect");
