@@ -7,7 +7,7 @@
 }
 
 body {
-    background: red;
+    background: grey;
 }
 .startQuestion{
     background: white;
@@ -23,8 +23,9 @@ body {
     flex-direction: row;
     background: yellow;
     margin: 0;
+    border-radius: 10px;
     font-size: 20x;
-    width: 80px;
+    width: 100px;
     height: 30px;
 
 }
@@ -62,13 +63,13 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
-.btn:hover {
+.btn:hover:not([disabled]) {
     background-color: black;
     color: white;
 }
 #next-btn {
-    background-color: aqua;
-    color: orange;
+    background-color: black;
+    color: white;
     font-weight: 500;
     width: 150px;
     border: 0;

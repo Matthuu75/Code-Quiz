@@ -28,7 +28,6 @@ const questions = [
     }
 ];
 
-
 const questionEl = document.getElementById("question");
 const answerBtns = document.getElementById("answer-btns");
 const nextBtn = document.getElementById("next-btn");
@@ -41,7 +40,6 @@ let score = 0;
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    scoreBox.textContent = "Score: " + score
     nextBtn.innerHTML = "Next";
     showQuestion();
 }
@@ -79,30 +77,36 @@ function resetQuiz() {
         answerBtns.removeChild(answerBtns.firstChild);
     }
 }
+
 function selectAnswer(e) {
     const selectedBtn = e.target;
     //correct answers are in green, incorrect in red
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
+        score ++;
+        console.log("Correct!");
     } else {
-        selectedBtn.classList.add("incorrect")
+        selectedBtn.classList.add("incorrect");
+        console.log("Incorrect!");
     }
     Array.from(answerBtns.children).forEach(button => {
         if (button.dataset.correct === "true") {
-            button.classList.add("corect");
+            button.classList.add("correct");
         }
         button.disabled = true;
     })
     nextBtn.style.display = "block";
 }
-
 startQuiz();
+
+// function finishQuiz() {
+
+// }
 
 var timerEl = document.getElementById('timer')
 var startQuiz = document.getElementById('#startQuiz')
 var remainingTime = document.getElementById('remainingTime')
-const button = document.querySelector("#button")
 var startBtn = document.getElementById("start")
 
 //need to figure out how to get this timer to start on the start quiz button
@@ -123,6 +127,7 @@ function countdown() {
         } else {
             clearInterval(timeInterval);
             remainingTime.textContent = "Time's Up"
+            //finish quiz function HERE
         }
     }, 1000);
 }
