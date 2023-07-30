@@ -103,8 +103,8 @@ startQuiz();
 var finishQuiz = document.getElementById('finishQuiz')
 
 function allDone() {
-    if (qu)
-    console.log("all done");
+    //need this to show up after my last question
+        console.log("all done");
     document.getElementById("finishQuiz").style.display = "block"
     document.getElementById("quizQuestions").style.display = "none"
 }
