@@ -99,11 +99,16 @@ function selectAnswer(e) {
 }
 startQuiz();
 
+
+
+
 var finishQuiz = document.getElementById('finishQuiz')
 
 function allDone() {
+    currentQuestionIndex > 2; 
     document.getElementById("finishQuiz").style.display = "block"
     document.getElementById("quizQuestions").style.display = "none"
+
 }
 
 var timerEl = document.getElementById('timer')
