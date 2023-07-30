@@ -37,6 +37,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 document.getElementById("timer").style.display = "none"
+document.getElementById("finishQuiz").style.display = "none"
 
 //when the quiz is started, reset score and reset questions
 function startQuiz() {
@@ -99,26 +100,21 @@ function selectAnswer(e) {
 }
 startQuiz();
 
-
-
-
 var finishQuiz = document.getElementById('finishQuiz')
 
 function allDone() {
-    currentQuestionIndex > 2; 
+    if (qu)
+    console.log("all done");
     document.getElementById("finishQuiz").style.display = "block"
     document.getElementById("quizQuestions").style.display = "none"
-
 }
+
+//TIMER Section
 
 var timerEl = document.getElementById('timer')
 var startQuiz = document.getElementById('#startQuiz')
 var remainingTime = document.getElementById('remainingTime')
 var startBtn = document.getElementById("start")
-
-
-
-
 
 startBtn.addEventListener("click", (e) => {
     console.log("start timer")
@@ -129,7 +125,7 @@ startBtn.addEventListener("click", (e) => {
 });
 
 function countdown() {
-    var timeLeft = 10;
+    var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 1) {
             remainingTime.textContent = 'Time: ' + timeLeft;
