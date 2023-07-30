@@ -10,15 +10,16 @@
 
 <body>
   </div>
-  <div style="text-align: center;" class="timer">
+  <div style="text-align: center;" id="timer">
     <h2 id="countdownTimer"><span id="remainingTime"></span></h4>
-    <h2 id="score"></h2>
+      <h2 id="score"></h2>
   </div>
 
 
   <div style="text-align:center;" class="startQuestion" id="startQuestion">
     <h1 class="title">Coding Quiz Challenge</h1>
-    <p class="instructions">Answer the following 3 questions to the best of your ability. The score will not be kept because I was not able to correctly add up the score. So... Everyone WINS!</p>
+    <p class="instructions">Answer the following 3 questions to the best of your ability. The score will not be kept
+      because I was not able to correctly add up the score. So... Everyone WINS!</p>
     <button id="start">Start Quiz!</button>
   </div>
 
@@ -32,6 +33,10 @@
       </div>
       <button id="next-btn">Next</button>
     </div>
+
+  <div id="finishQuiz">
+    <h3>All Done!</h3>
+  </div>
 
     <script src="script.js"></script>
 </body>

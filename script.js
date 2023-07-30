@@ -26,13 +26,6 @@ const questions = [
             { text: "Green", correct: true },
         ]
     },
-    {
-        question: "Start over?",
-        answers: [
-            { text: "Yes", correct: true },
-            { text: "No", correct: false },
-        ]
-    },
 ];
 
 const questionEl = document.getElementById("question");
@@ -42,6 +35,8 @@ const scoreBox = document.getElementById("score")
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+document.getElementById("timer").style.display = "none"
 
 //when the quiz is started, reset score and reset questions
 function startQuiz() {
@@ -70,13 +65,11 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
     })
 }
-
 function nextQuestion() {
     currentQuestionIndex++
     showQuestion()
 }
 nextBtn.addEventListener("click", nextQuestion)
-
 
 function resetQuiz() {
     nextBtn.style.display = "none";
@@ -84,7 +77,6 @@ function resetQuiz() {
         answerBtns.removeChild(answerBtns.firstChild);
     }
 }
-
 function selectAnswer(e) {
     const selectedBtn = e.target;
     //correct answers are in green, incorrect in red
@@ -107,26 +99,32 @@ function selectAnswer(e) {
 }
 startQuiz();
 
-// function finishQuiz() {
+var finishQuiz = document.getElementById('finishQuiz')
 
-// }
+function allDone() {
+    document.getElementById("finishQuiz").style.display = "block"
+    document.getElementById("quizQuestions").style.display = "none"
+}
 
 var timerEl = document.getElementById('timer')
 var startQuiz = document.getElementById('#startQuiz')
 var remainingTime = document.getElementById('remainingTime')
 var startBtn = document.getElementById("start")
 
-//need to figure out how to get this timer to start on the start quiz button
+
+
+
+
 startBtn.addEventListener("click", (e) => {
     console.log("start timer")
+    document.getElementById("timer").style.display = "block";
     document.getElementById("startQuestion").style.display = "none";
     document.getElementById("quizQuestions").style.display = "block";
     countdown()
 });
 
 function countdown() {
-    // onclick EVENT?
-    var timeLeft = 60;
+    var timeLeft = 10;
     var timeInterval = setInterval(function () {
         if (timeLeft > 1) {
             remainingTime.textContent = 'Time: ' + timeLeft;
@@ -134,7 +132,8 @@ function countdown() {
         } else {
             clearInterval(timeInterval);
             remainingTime.textContent = "Time's Up"
-            //finish quiz function HERE
+            console.log("All Done!")
+            allDone();
         }
     }, 1000);
 }
