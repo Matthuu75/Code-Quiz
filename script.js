@@ -53,7 +53,7 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNum = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNum + ". " + currentQuestion.question;
-    // console.log(questionNum)
+    console.log(questionNum)
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -66,11 +66,20 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
     })
 }
+
 function nextQuestion() {
     currentQuestionIndex++
     showQuestion()
+    //need to add function to go to id=finishQuiz after last question
+    // if () {
+    //     console.log("all done")
+    //     allDone();
+    // }
 }
+
 nextBtn.addEventListener("click", nextQuestion)
+
+var timeLeft = 60;
 
 function resetQuiz() {
     nextBtn.style.display = "none";
@@ -88,6 +97,7 @@ function selectAnswer(e) {
         console.log("Correct!");
     } else {
         selectedBtn.classList.add("incorrect");
+        //need to figure out how to take off time when incorrect
         console.log("Incorrect!");
     }
     Array.from(answerBtns.children).forEach(button => {
@@ -100,7 +110,6 @@ function selectAnswer(e) {
 }
 startQuiz();
 
-var finishQuiz = document.getElementById('finishQuiz')
 
 function allDone() {
     //need this to show up after my last question
@@ -112,7 +121,7 @@ function allDone() {
 //TIMER Section
 
 var timerEl = document.getElementById('timer')
-var startQuiz = document.getElementById('#startQuiz')
+var start = document.getElementById('#startQuiz')
 var remainingTime = document.getElementById('remainingTime')
 var startBtn = document.getElementById("start")
 
@@ -125,7 +134,6 @@ startBtn.addEventListener("click", (e) => {
 });
 
 function countdown() {
-    var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 1) {
             remainingTime.textContent = 'Time: ' + timeLeft;
